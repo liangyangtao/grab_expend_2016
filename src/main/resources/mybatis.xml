@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE configuration   
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="WebSiteInfo" type="com.unbank.mybatis.entity.WebSiteInfo" />
+		<typeAlias alias="ArticleInfo" type="com.unbank.mybatis.entity.ArticleInfo" />
+		<typeAlias alias="ArticleContent" type="com.unbank.mybatis.entity.ArticleContent" />
+		<typeAlias alias="SQLAdapter" type="com.unbank.mybatis.entity.SQLAdapter" />
+		<typeAlias alias="ArticleKeyword" type="com.unbank.mybatis.entity.ArticleKeyword" />
+		<typeAlias alias="ArticleKeywordNum"
+			type="com.unbank.mybatis.entity.ArticleKeywordNum" />
+		<typeAlias alias="ArticleLocation" type="com.unbank.mybatis.entity.ArticleLocation" />
+		<typeAlias alias="ArticleOrganization"
+			type="com.unbank.mybatis.entity.ArticleOrganization" />
+		<typeAlias alias="ArticlePerson" type="com.unbank.mybatis.entity.ArticlePerson" />
+		<typeAlias alias="ArticleTextRankKeyword"
+			type="com.unbank.mybatis.entity.ArticleTextRankKeyword" />
+		<typeAlias alias="ArticleCrawlIdToDocId"
+			type="com.unbank.mybatis.entity.ArticleCrawlIdToDocId" />
+		<typeAlias alias="ArticleCrawlIDSimilarId"
+			type="com.unbank.mybatis.entity.ArticleCrawlIDSimilarId" />
+		<typeAlias alias="ArticlePlateKeyword"
+			type="com.unbank.mybatis.entity.ArticlePlateKeyword" />
+		<typeAlias alias="Sectionlabel" type="com.unbank.mybatis.entity.Sectionlabel" />
+		<typeAlias alias="ArticleUnbankKeyword"
+			type="com.unbank.mybatis.entity.ArticleUnbankKeyword" />
+		<typeAlias alias="ArticleCheckKeyword"
+			type="com.unbank.mybatis.entity.ArticleCheckKeyword" />
+		<typeAlias alias="ClassSection" type="com.unbank.mybatis.entity.ClassSection" />
+		<typeAlias alias="ClassWebsiteid" type="com.unbank.mybatis.entity.ClassWebsiteid" />
+		<typeAlias alias="ClassKeyword" type="com.unbank.mybatis.entity.ClassKeyword" />
+		<typeAlias alias="ArticleCrawlSimilar"
+			type="com.unbank.mybatis.entity.ArticleCrawlSimilar" />
+		<typeAlias alias="ClassNoNeedKeyword"
+			type="com.unbank.mybatis.entity.ClassNoNeedKeyword" />
+		<typeAlias alias="ClassTitleKeyword"
+			type="com.unbank.mybatis.entity.ClassTitleKeyword" />
+		<typeAlias alias="CustModuleConstraint"
+			type="com.unbank.mybatis.entity.CustModuleConstraint" />
+		<typeAlias alias="CustModule" type="com.unbank.mybatis.entity.CustModule" />
+		<typeAlias alias="CustUser" type="com.unbank.mybatis.entity.CustUser" />
+		<typeAlias alias="UserErrorPushInfo" type="com.unbank.mybatis.entity.UserErrorPushInfo" />
+		
+	</typeAliases>
+	<!--数据源配置 这块用 BD2数据库 -->
+	<environments default="development">
+		<!--采集数据库 -->
+		<environment id="development">
+			<transactionManager type="jdbc" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://10.0.2.26:3306/ubk_platform?allowMultiQueries=true" />
+				<property name="username" value="user" />
+				<property name="password" value="123456" />
+			</dataSource>
+		</environment>
+		<!-- 智能编辑平台 -->
+		<environment id="intelltest">
+			<transactionManager type="jdbc" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://10.0.0.41:3306/ubk_platform?allowMultiQueries=true" />
+				<property name="username" value="root" />
+				<property name="password" value="123456" />
+			</dataSource>
+		</environment>
+		<!--知识自动化平台 -->
+		<environment id="ubkkaptest">
+			<transactionManager type="jdbc" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://10.0.2.122:3306/ubkkap?allowMultiQueries=true" />
+				<property name="username" value="root" />
+				<property name="password" value="123456" />
+			</dataSource>
+		</environment>
+		<!--规则平台 -->
+		<environment id="info_cust">
+			<transactionManager type="jdbc" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://10.0.0.41:3306/info_cust?allowMultiQueries=true" />
+				<property name="username" value="root" />
+				<property name="password" value="123456" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<!--userMapper.xml装载进来 同等于把“dao”的实现装载进来 -->
+		<mapper resource="com/unbank/mybatis/mapper/ArticleContentMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleInfoMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/WebSiteInfoMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/SQLAdapterMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleKeywordMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleKeywordNumMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleLocationMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleOrganizationMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticlePersonMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleTextRankKeywordMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleCrawlIdToDocIdMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleCrawlIDSimilarIdMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticlePlateKeywordMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/SectionlabelMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleUnbankKeywordMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleCheckKeywordMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ClassSectionMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ClassWebsiteidMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ClassKeywordMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ArticleCrawlSimilarMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ClassNoNeedKeywordMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/ClassTitleKeywordMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/CustModuleConstraintMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/CustModuleMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/CustUserMapper.xml" />
+		<mapper resource="com/unbank/mybatis/mapper/UserErrorPushInfoMapper.xml" />
+	</mappers>
+</configuration> 

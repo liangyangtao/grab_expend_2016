@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context1">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.0.0.41:3306/info_cust?autoReconnect=true&amp;characterEncoding=UTF-8"
+			userId="root" password="123456" />
+		<javaModelGenerator targetPackage="com.unbank.mybatis.entity"
+			targetProject="grab_expand/src" />
+		<sqlMapGenerator targetPackage="com.unbank.mybatis.mapper"
+			targetProject="grab_expand/src" />
+		<javaClientGenerator targetPackage="com.unbank.mybatis.mapper"
+			targetProject="grab_expand/src" type="XMLMAPPER" />
+
+
+		<table tableName="user_error_push_info" domainObjectName="UserErrorPushInfo">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" type="post" />
+		</table>
+		<table tableName="user_push_info" domainObjectName="UserPushInfo">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" type="post" />
+		</table>
+
+	</context>
+</generatorConfiguration>
